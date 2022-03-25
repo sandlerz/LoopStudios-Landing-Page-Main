@@ -1,0 +1,33 @@
+@use "../variables" as *;
+
+footer {
+  height: 16rem;
+  background-color: black;
+  
+  > div {
+    padding: 4rem 16.5rem 5rem;
+    width: 144rem;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .social {
+      display: flex;
+      justify-content: space-between;
+      div{
+        display: flex;
+        gap: 1.5em;
+      }
+    }
+
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      p {
+        color: $Dark_Gray;
+      }
+    }
+  }
+}

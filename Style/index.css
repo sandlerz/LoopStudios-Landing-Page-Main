@@ -1,0 +1,197 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  font-size: 1.5rem;
+}
+
+h1, h2 {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 65rem;
+  margin-bottom: 16rem;
+}
+header > div {
+  padding: 6rem 16.5rem 0;
+  width: 144rem;
+  margin: auto;
+}
+header > div div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 13rem;
+}
+header > div h1 {
+  padding: 4rem 10rem 4rem 5rem;
+  height: 28rem;
+  width: 65rem;
+  color: white;
+  border: 1px solid white;
+  font-size: 7rem;
+  font-weight: 400;
+}
+
+header::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/desktop/image-hero.jpg);
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -10;
+  filter: brightness(0.4);
+}
+
+.nav {
+  display: flex;
+  gap: 3rem;
+}
+.nav a {
+  text-decoration: none;
+  color: white;
+}
+
+section {
+  padding: 0 16.5rem;
+  width: 144rem;
+  margin: auto;
+  margin-bottom: 18rem;
+}
+section .interactive {
+  position: relative;
+  height: 50rem;
+}
+section .interactive div {
+  position: absolute;
+  width: 54rem;
+  height: 32rem;
+  padding: 10rem 0 0 10rem;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+}
+section .interactive div h1 {
+  margin-bottom: 3.5rem;
+  font-size: 4.8rem;
+  font-weight: 400;
+}
+section .interactive div p {
+  color: #8c8c8c;
+}
+
+.our_creation {
+  padding: 0 16.5rem;
+  width: 144rem;
+  margin: auto;
+  margin-bottom: 18.5rem;
+}
+.our_creation .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 9rem;
+}
+.our_creation .header h1 {
+  font-size: 4.8rem;
+  font-weight: 300;
+}
+.our_creation .header a {
+  text-decoration: none;
+  color: black;
+  border: 2px solid dimgray;
+  padding: 0.9rem 3.8rem;
+  letter-spacing: 0.5rem;
+}
+.our_creation .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+.our_creation .grid div {
+  display: flex;
+  align-items: flex-end;
+  font-size: 2.5rem;
+  font-weight: 100;
+  background-color: aqua;
+  color: white;
+  width: 25rem;
+  height: 45rem;
+  padding: 3rem;
+  filter: brightness(0.8);
+  cursor: pointer;
+}
+.our_creation .grid .deep_earth {
+  background-image: url(../images/desktop/image-deep-earth.jpg);
+}
+.our_creation .grid .night_arcade {
+  background-image: url(../images/desktop/image-night-arcade.jpg);
+}
+.our_creation .grid .soccer_team_vr {
+  background-image: url(../images/desktop/image-soccer-team.jpg);
+}
+.our_creation .grid .the_grid {
+  background-image: url(../images/desktop/image-grid.jpg);
+}
+.our_creation .grid .from_up_above_vr {
+  background-image: url(../images/desktop/image-from-above.jpg);
+}
+.our_creation .grid .pocket_borealis {
+  background-image: url(../images/desktop/image-pocket-borealis.jpg);
+}
+.our_creation .grid .the_curiosity {
+  background-image: url(../images/desktop/image-curiosity.jpg);
+}
+.our_creation .grid .make_it_frisheye {
+  background-image: url(../images/desktop/image-fisheye.jpg);
+}
+
+footer {
+  height: 16rem;
+  background-color: black;
+}
+footer > div {
+  padding: 4rem 16.5rem 5rem;
+  width: 144rem;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer > div .social {
+  display: flex;
+  justify-content: space-between;
+}
+footer > div .social div {
+  display: flex;
+  gap: 1.5em;
+}
+footer > div .contact {
+  display: flex;
+  justify-content: space-between;
+}
+footer > div .contact p {
+  color: #8c8c8c;
+}
+
+/*# sourceMappingURL=index.css.map */
