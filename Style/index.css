@@ -16,7 +16,8 @@ body {
   font-size: 1.5rem;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -34,8 +35,11 @@ header > div {
 header > div div {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin-bottom: 13rem;
+}
+header > div div .nav_button {
+  display: none;
 }
 header > div h1 {
   padding: 4rem 10rem 4rem 5rem;
@@ -50,15 +54,16 @@ header > div h1 {
 header::after {
   position: absolute;
   content: "";
+  min-width: 144rem;
   width: 100%;
   height: 100%;
   background-image: url(../images/desktop/image-hero.jpg);
-  top: 0;
-  left: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  z-index: -10;
+  top: 0;
+  left: 0;
+  z-index: -99;
   filter: brightness(0.4);
 }
 
@@ -69,19 +74,35 @@ header::after {
 .nav a {
   text-decoration: none;
   color: white;
+  border-bottom: 2px solid transparent;
+}
+.nav a::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  background-color: white;
+  width: 0%;
+  height: 0.2rem;
+  margin: auto;
+  transform: translateY(0.7rem);
+}
+.nav a:hover:after {
+  transition: width 0.4s, opacity 0.4s;
+  opacity: 1;
+  width: 50%;
 }
 
-section {
+.interactive_container {
   padding: 0 16.5rem;
   width: 144rem;
   margin: auto;
   margin-bottom: 18rem;
 }
-section .interactive {
+.interactive_container .interactive {
   position: relative;
   height: 50rem;
 }
-section .interactive div {
+.interactive_container .interactive div {
   position: absolute;
   width: 54rem;
   height: 32rem;
@@ -90,12 +111,12 @@ section .interactive div {
   right: 0;
   background-color: white;
 }
-section .interactive div h1 {
+.interactive_container .interactive div h1 {
   margin-bottom: 3.5rem;
   font-size: 4.8rem;
   font-weight: 400;
 }
-section .interactive div p {
+.interactive_container .interactive div p {
   color: #8c8c8c;
 }
 
@@ -115,12 +136,21 @@ section .interactive div p {
   font-size: 4.8rem;
   font-weight: 300;
 }
-.our_creation .header a {
+.our_creation .see_all {
   text-decoration: none;
   color: black;
   border: 2px solid dimgray;
   padding: 0.9rem 3.8rem;
   letter-spacing: 0.5rem;
+}
+.our_creation .see_all:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+}
+.our_creation #mobile_visible {
+  display: none;
 }
 .our_creation .grid {
   display: grid;
@@ -132,13 +162,29 @@ section .interactive div p {
   align-items: flex-end;
   font-size: 2.5rem;
   font-weight: 100;
-  background-color: aqua;
   color: white;
   width: 25rem;
   height: 45rem;
   padding: 3rem;
   filter: brightness(0.8);
   cursor: pointer;
+}
+.our_creation .grid div h2 {
+  z-index: 2;
+}
+.our_creation .grid div:hover:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.774);
+  transition: background-color 1s linear;
+}
+.our_creation .grid div:hover {
+  transition: color 0.2s linear;
+  color: black;
 }
 .our_creation .grid .deep_earth {
   background-image: url(../images/desktop/image-deep-earth.jpg);
@@ -166,32 +212,282 @@ section .interactive div p {
 }
 
 footer {
-  height: 16rem;
+  min-width: 144rem;
+  height: auto;
   background-color: black;
 }
 footer > div {
   padding: 4rem 16.5rem 5rem;
   width: 144rem;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  gap: 3rem;
 }
-footer > div .social {
-  display: flex;
-  justify-content: space-between;
+footer > div > img {
+  cursor: pointer;
 }
-footer > div .social div {
+footer > div .social_icons {
+  justify-self: end;
   display: flex;
-  gap: 1.5em;
+  gap: 1rem;
 }
-footer > div .contact {
-  display: flex;
-  justify-content: space-between;
+footer > div .social_icons a::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  background-color: white;
+  width: 0%;
+  height: 0.2rem;
+  margin: auto;
+  transform: translateY(0.7rem);
 }
-footer > div .contact p {
-  color: #8c8c8c;
+footer > div .social_icons a:hover:after {
+  transition: width 0.4s, opacity 0.4s;
+  opacity: 1;
+  width: 100%;
+}
+footer > div p {
+  justify-self: end;
+  color: dimgray;
+}
+
+@media only screen and (max-width: 46.875em) {
+  header {
+    width: 100%;
+    height: 173.33vw;
+    overflow: hidden;
+    margin-bottom: 26.66vw;
+  }
+  header > div {
+    padding: 8rem 4.5rem 0;
+    width: 100%;
+    margin: auto;
+  }
+  header > div div {
+    margin-bottom: 43.33vw;
+    align-items: center;
+  }
+  header > div div a {
+    width: 100%;
+    height: auto;
+    z-index: 99;
+  }
+  header > div div a img {
+    display: block;
+    width: 38vw;
+    height: auto;
+  }
+  header > div div .nav_button {
+    display: block;
+    margin: 0;
+  }
+  header > div div .nav_button #menu_checkbox {
+    display: none;
+  }
+  header > div div .nav_button label {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+  }
+  header > div div .nav_button label div {
+    position: relative;
+    height: 1vw;
+    width: 8vw;
+    background-color: #fff;
+    transition: 0.3s ease transform, opacity 0.3s;
+    margin: 0;
+    z-index: 99;
+  }
+  header > div div .nav_button #menu_checkbox:checked + label div#line_1 {
+    transform: rotateZ(45deg);
+    top: 2vw;
+  }
+  header > div div .nav_button #menu_checkbox:checked + label div#line_2 {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+  header > div div .nav_button #menu_checkbox:checked + label div#line_3 {
+    transform: rotateZ(-45deg);
+    top: -2vw;
+  }
+  header > div div .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 173vw;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 58.6vw 6.6vw;
+    margin: 0;
+    background-color: black;
+    font-size: 3vw;
+    transform: translateX(100vw);
+    transition: transform 1s;
+  }
+  header > div div .nav a {
+    width: fit-content;
+    font-size: 8vw;
+    font-family: "Josefin Sans";
+  }
+  header > div h1 {
+    padding: 8% 8%;
+    font-size: 10.3vw;
+    height: auto;
+    width: 100%;
+    white-space: pre-line;
+  }
+
+  header::after {
+    background-image: url(../images/mobile/image-hero.jpg);
+    background-position: top;
+    background-size: cover;
+    min-width: 100%;
+    height: 173vw;
+    filter: brightness(0.7);
+  }
+
+  .interactive_container {
+    width: 100%;
+    padding: 0 4.5rem 0;
+    height: auto;
+    margin-bottom: 25vw;
+  }
+  .interactive_container .interactive {
+    height: auto;
+  }
+  .interactive_container .interactive img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15%;
+  }
+  .interactive_container .interactive div {
+    position: initial;
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    height: auto;
+  }
+  .interactive_container .interactive div h1 {
+    font-size: 8vw;
+    margin-bottom: 5%;
+  }
+  .interactive_container .interactive div p {
+    font-size: 4vw;
+    line-height: 150%;
+    width: 85%;
+    margin: auto;
+  }
+
+  .our_creation {
+    width: 100%;
+    height: auto;
+    padding: 0 4.5rem 0;
+    text-align: center;
+    margin-bottom: 26.66vw;
+  }
+  .our_creation .header {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15%;
+  }
+  .our_creation .header h1 {
+    font-size: 8vw;
+  }
+  .our_creation #desktop_visible {
+    display: none;
+  }
+  .our_creation #mobile_visible {
+    display: initial;
+    padding: 2vw 14vw;
+    font-size: 3vw;
+  }
+  .our_creation .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 7vw;
+    margin-bottom: 8vw;
+  }
+  .our_creation .grid div {
+    width: 100%;
+    height: 32vw;
+    background-repeat: no-repeat;
+    background-position: center top;
+    filter: brightness(0.8);
+    font-size: 4vw;
+    padding: 7% 6%;
+  }
+  .our_creation .grid .deep_earth {
+    background-image: url(../images/mobile/image-deep-earth.jpg);
+  }
+  .our_creation .grid .night_arcade {
+    background-image: url(../images/mobile/image-night-arcade.jpg);
+  }
+  .our_creation .grid .soccer_team_vr {
+    background-image: url(../images/mobile/image-soccer-team.jpg);
+  }
+  .our_creation .grid .the_grid {
+    background-image: url(../images/mobile/image-grid.jpg);
+  }
+  .our_creation .grid .from_up_above_vr {
+    background-image: url(../images/mobile/image-from-above.jpg);
+  }
+  .our_creation .grid .pocket_borealis {
+    background-image: url(../images/mobile/image-pocket-borealis.jpg);
+  }
+  .our_creation .grid .the_curiosity {
+    background-image: url(../images/mobile/image-curiosity.jpg);
+  }
+  .our_creation .grid .make_it_frisheye {
+    background-image: url(../images/mobile/image-fisheye.jpg);
+  }
+
+  footer {
+    min-width: 100%;
+    height: auto;
+  }
+  footer > div {
+    margin: 0;
+    padding: 14.7vw 0;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    justify-items: center;
+    align-content: center;
+  }
+  footer > div > img {
+    width: 30vw;
+  }
+  footer > div .social_icons {
+    justify-self: inherit;
+    grid-row: 3;
+    gap: 4vw;
+  }
+  footer > div .social_icons img {
+    width: 5vw;
+  }
+  footer > div .nav {
+    flex-direction: column;
+    align-items: center;
+    font-size: 3vw;
+    padding: 3vw 0;
+  }
+  footer > div p {
+    justify-self: inherit;
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-width: 25em) {
+  header > div h1 {
+    font-size: 9vw;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

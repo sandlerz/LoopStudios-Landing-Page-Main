@@ -20,7 +20,7 @@
   <!-- Links to Css, Js -->
 
   <link rel="stylesheet" href="Style/index.css">
-  <script src="JavaScript/index.js"></script>
+  <script src="JavaScript/index.js" defer></script>
 </head>
 
 <body>
@@ -28,8 +28,16 @@
     <header>
       <div>
         <div>
-          <a href=""><img src="images/logo.svg" alt=""></a>
-          <nav class="nav">
+          <a href="#"><img src="images/logo.svg" alt=""></a>
+          <div class="nav_button">
+            <input type="checkbox" id="menu_checkbox">
+            <label for="menu_checkbox">
+              <div id="line_1"></div>
+              <div id="line_2"></div>
+              <div id="line_3"></div>
+            </label>
+          </div>
+          <nav class="nav" id="nav">
             <a href="#">About</a>
             <a href="#">Careers</a>
             <a href="#">Events</a>
@@ -37,10 +45,11 @@
             <a href="#">Support</a>
           </nav>
         </div>
-        <h1>IMMERSIVE EXPERIENCE THAT DELIVER</h1>
+        <h1>IMMERSIVE EXPERIENCES THAT
+          DELIVER</h1>
       </div>
     </header>
-    <section>
+    <section class="interactive_container">
       <div class="interactive">
         <img src="images/desktop/image-interactive.jpg" alt="">
         <div>
@@ -55,7 +64,7 @@
     <section class="our_creation">
       <div class="header">
         <h1>OUR CREATIONS</h1>
-        <a href="">SEE ALL</a>
+        <a href="#" id="desktop_visible" class="see_all">SEE ALL</a>
       </div>
       <div class="grid">
         <div class="deep_earth">
@@ -83,28 +92,25 @@
           <h2>MAKE IT <br> FISHEYE</h2>
         </div>
       </div>
+      <a href="#" id="mobile_visible" class="see_all">SEE ALL</a>
     </section>
     <footer>
       <div>
-        <div class="social">
-          <img src="images/logo.svg" alt="">
-          <div>
-            <a href=""><img src="images/icon-facebook.svg" alt=""></a>
-            <a href=""><img src="images/icon-twitter.svg" alt=""></a>
-            <a href=""><img src="images/icon-pinterest.svg" alt=""></a>
-            <a href=""><img src="images/icon-instagram.svg" alt=""></a>
-          </div>
+        <img src="images/logo.svg" alt="">
+        <div class="social_icons">
+          <a href=""><img src="images/icon-facebook.svg" alt=""></a>
+          <a href=""><img src="images/icon-twitter.svg" alt=""></a>
+          <a href=""><img src="images/icon-pinterest.svg" alt=""></a>
+          <a href=""><img src="images/icon-instagram.svg" alt=""></a>
         </div>
-        <div class="contact">
-          <nav class="nav">
-            <a href="#">About</a>
-            <a href="#">Careers</a>
-            <a href="#">Events</a>
-            <a href="#">Products</a>
-            <a href="#">Support</a>
-          </nav>
-          <p>&copy; 2021 Loopstudios. All rights reserved.</p>
-        </div>
+        <nav class="nav">
+          <a href="#">About</a>
+          <a href="#">Careers</a>
+          <a href="#">Events</a>
+          <a href="#">Products</a>
+          <a href="#">Support</a>
+        </nav>
+        <p>&copy; 2021 Loopstudios. All rights reserved.</p>
       </div>
     </footer>
   </main>

@@ -1,33 +1,49 @@
 @use "../variables" as *;
 
 footer {
-  height: 16rem;
+  min-width: 144rem;
+  height: auto;
   background-color: black;
-  
+
   > div {
     padding: 4rem 16.5rem 5rem;
     width: 144rem;
-    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    gap: 3rem;
 
-    .social {
+    > img {
+      cursor: pointer;
+    }
+
+    .social_icons {
+      justify-self: end;
       display: flex;
-      justify-content: space-between;
-      div{
-        display: flex;
-        gap: 1.5em;
+      gap: 1rem;
+
+      a::after {
+        content: "";
+        display: block;
+        opacity: 0;
+        background-color: white;
+        width: 0%;
+        height: 0.2rem;
+        margin: auto;
+        transform: translateY(0.7rem);
+      }
+
+      a:hover:after {
+        transition: width 0.4s, opacity 0.4s;
+        opacity: 1;
+        width: 100%;
       }
     }
 
-    .contact {
-      display: flex;
-      justify-content: space-between;
-      p {
-        color: $Dark_Gray;
-      }
+    p {
+      justify-self: end;
+      color: $Very_Dark_Gray;
     }
   }
 }

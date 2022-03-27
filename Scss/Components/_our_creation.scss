@@ -16,14 +16,25 @@
       font-size: 4.8rem;
       font-weight: 300;
     }
+  }
 
-    a {
-      text-decoration: none;
-      color: black;
-      border: 2px solid $Very_Dark_Gray;
-      padding: 0.9rem 3.8rem;
-      letter-spacing: 0.5rem;
-    }
+  .see_all {
+    text-decoration: none;
+    color: black;
+    border: 2px solid $Very_Dark_Gray;
+    padding: 0.9rem 3.8rem;
+    letter-spacing: 0.5rem;
+  }
+
+  .see_all:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+  }
+
+  #mobile_visible {
+    display: none;
   }
 
   .grid {
@@ -36,13 +47,31 @@
       align-items: flex-end;
       font-size: 2.5rem;
       font-weight: 100;
-      background-color: aqua;
       color: white;
       width: 25rem;
       height: 45rem;
       padding: 3rem;
       filter: brightness(0.8);
       cursor: pointer;
+
+      h2 {
+        z-index: 2;
+      }
+    }
+
+    div:hover:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.774);
+      transition: background-color 1s linear;
+    }
+    div:hover {
+      transition: color 0.2s linear;
+      color: black;
     }
 
     .deep_earth {
