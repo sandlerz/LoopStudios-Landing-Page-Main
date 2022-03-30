@@ -8,7 +8,7 @@
     margin-bottom: 26.66vw;
 
     > div {
-      padding: 8rem 4.5rem 0;
+      padding: 10.66vw 6vw 0;
       width: 100%;
       margin: auto;
 
@@ -41,7 +41,7 @@
             display: flex;
             flex-direction: column;
             gap: 1vw;
-            div {
+            span {
               position: relative;
               height: 1vw;
               width: 8vw;
@@ -52,17 +52,17 @@
             }
           }
 
-          #menu_checkbox:checked + label div#line_1 {
+          #menu_checkbox:checked + label span#line_1 {
             transform: rotateZ(45deg);
             top: 2vw;
           }
 
-          #menu_checkbox:checked + label div#line_2 {
+          #menu_checkbox:checked + label span#line_2 {
             opacity: 0;
             transform: rotate(180deg);
           }
 
-          #menu_checkbox:checked + label div#line_3 {
+          #menu_checkbox:checked + label span#line_3 {
             transform: rotateZ(-45deg);
             top: -2vw;
           }
@@ -113,7 +113,7 @@
 
   .interactive_container {
     width: 100%;
-    padding: 0 4.5rem 0;
+    padding: 0 6vw 0;
     height: auto;
     margin-bottom: 25vw;
 
@@ -152,7 +152,7 @@
   .our_creation {
     width: 100%;
     height: auto;
-    padding: 0 4.5rem 0;
+    padding: 0 6vw 0;
     text-align: center;
     margin-bottom: 26.66vw;
 
@@ -232,7 +232,7 @@
 
     > div {
       margin: 0;
-      padding: 14.7vw 0;
+      padding: 14.7vw 6vw;
       width: 100vw;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, auto);
@@ -240,7 +240,7 @@
       align-content: center;
 
       > img {
-        width: 30vw;
+        width: 40vw;
       }
 
       .social_icons {
@@ -255,7 +255,7 @@
       .nav {
         flex-direction: column;
         align-items: center;
-        font-size: 3vw;
+        font-size: 4vw;
         padding: 3vw 0;
       }
 
